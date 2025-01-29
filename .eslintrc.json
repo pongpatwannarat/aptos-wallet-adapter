@@ -1,0 +1,8 @@
+{
+    "rules": {
+      "no-warning-comments": [
+        "warn",
+        { "terms": ["todo", "fixme"], "location": "start" }
+      ]
+    }
+  }
