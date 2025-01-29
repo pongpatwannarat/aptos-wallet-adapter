@@ -9,6 +9,7 @@
     "@aptos-labs/wallet-adapter-react": "^3.7.9",
     "@mizuwallet-sdk/core": "^1.4.0",
     "@scure/bip39": "^1.5.4",
+    "@telegram-apps/bridge": "^1.9.2",
     "@types/react-router-dom": "^5.3.3",
     "@wallet-standard/core": "^1.1.0",
     "antd": "^5.23.2",
@@ -48,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
