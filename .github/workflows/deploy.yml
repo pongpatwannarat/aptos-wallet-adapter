@@ -24,10 +24,8 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Clean Install
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install --legacy-peer-depseps
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
 
       - name: Build React App
         run: npm run build
