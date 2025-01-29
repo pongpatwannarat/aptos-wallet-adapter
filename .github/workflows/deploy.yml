@@ -40,10 +40,14 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
 
-      # Step 6: Set up GitHub authentication
-      - name: Set up GitHub authentication
+      # Step 6: Set up GitHub authentication for gh-pages
+      - name: Set up GitHub authentication for gh-pages
         run: |
           git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
+      # Debugging: Verify GitHub authentication
+      - name: Verify GitHub authentication
+        run: git remote -v
 
       # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
