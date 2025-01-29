@@ -9,6 +9,7 @@
     "@aptos-labs/wallet-adapter-react": "^3.7.9",
     "@scure/bip39": "^1.5.4",
     "@types/react-router-dom": "^5.3.3",
+    "@wallet-standard/core": "^1.1.0",
     "antd": "^5.23.2",
     "aptos": "^1.21.0",
     "autoprefixer": "^10.4.20",
