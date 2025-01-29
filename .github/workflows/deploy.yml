@@ -16,25 +16,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
+      # Step 3: Install Dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
+      # Step 4: Build the React app
       - name: Build React App
         run: npm run build
 
+      # Step 5: Configure Git user for deployment
       - name: Configure Git User
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
 
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
