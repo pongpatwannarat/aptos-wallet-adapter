@@ -3,35 +3,38 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Deploy only when pushing to the main branch
+      - main
   pull_request:
     branches:
-      - main  # Deploy when a PR is merged into the main branch
+      - main
+
+permissions:
+  contents: write  # Required for GitHub Pages deployment
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'  # Specify the Node.js version
+          node-version: '18'
 
-      # Step 3: Install dependencies
       - name: Install Dependencies
-        run: npm install --f
+        run: npm ci --legacy-peer-deps
 
-      # Step 4: Build the React app
       - name: Build React App
         run: npm run build
 
-      # Step 5: Deploy to GitHub Pages
+      - name: Configure Git User
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
