@@ -30,7 +30,13 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Step 4: Deploy to GitHub Pages (Build will run automatically via predeploy)
+      # Step 4: Configure Git User
+      - name: Configure Git User
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+      # Step 5: Deploy to GitHub Pages (Build will run automatically via predeploy)
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
