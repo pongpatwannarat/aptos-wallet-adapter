@@ -10,6 +10,7 @@
     "@scure/bip39": "^1.5.4",
     "@types/react-router-dom": "^5.3.3",
     "antd": "^5.23.2",
+    "aptos": "^1.21.0",
     "autoprefixer": "^10.4.20",
     "cra-template-typescript": "1.2.0",
     "gh-pages": "^6.3.0",
