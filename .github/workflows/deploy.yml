@@ -36,7 +36,12 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
 
-      # Step 5: Deploy to GitHub Pages (Build will run automatically via predeploy)
+      # Step 5: Set up GitHub authentication for gh-pages
+      - name: Set up GitHub authentication for gh-pages
+        run: |
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
+      # Step 6: Deploy to GitHub Pages (Build will run automatically via predeploy)
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
