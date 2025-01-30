@@ -3,10 +3,10 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - gh-pages
   pull_request:
     branches:
-      - main
+      - gh-pages
 
 permissions:
   contents: write  # Required for GitHub Pages deployment
@@ -46,5 +46,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build  # The folder the action should deploy
-          branch: main  # The branch the action should deploy to
+          branch: gh-pages  # The branch the action should deploy to
           token: ${{ secrets.GITHUB_TOKEN }}
+          clean: false
