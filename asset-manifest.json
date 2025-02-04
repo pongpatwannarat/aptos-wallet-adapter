@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/aptos-wallet-adapter/static/css/main.e6c13ad2.css",
-    "main.js": "/aptos-wallet-adapter/static/js/main.2a996d5e.js",
+    "main.js": "/aptos-wallet-adapter/static/js/main.752b309d.js",
     "static/js/812.f4869401.chunk.js": "/aptos-wallet-adapter/static/js/812.f4869401.chunk.js",
     "index.html": "/aptos-wallet-adapter/index.html",
     "main.e6c13ad2.css.map": "/aptos-wallet-adapter/static/css/main.e6c13ad2.css.map",
-    "main.2a996d5e.js.map": "/aptos-wallet-adapter/static/js/main.2a996d5e.js.map",
+    "main.752b309d.js.map": "/aptos-wallet-adapter/static/js/main.752b309d.js.map",
     "812.f4869401.chunk.js.map": "/aptos-wallet-adapter/static/js/812.f4869401.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.2a996d5e.js"
+    "static/js/main.752b309d.js"
   ]
 }
