@@ -13,6 +13,11 @@ function App() {
         if (connected && account) {
           // window.ReactNativeWebView.postMessage("");
           console.log('wallet address:', account?.address);
+          if (window.ReactNativeWebView) {
+            window.ReactNativeWebView.postMessage(account?.address);
+          } else {
+            console.log('ReactNativeWebView not found');
+          }
         } else {
           console.log('disconnect wallet');
         }
@@ -21,7 +26,7 @@ function App() {
       fetchAccountDetails();
     }, [connected, account]);
 
-    const shortenAddress = (address: string) => (address ? `${address.substring(0, 6)}....${address.slice(-6)}` : '');
+    const shortenAddress = (address: string) => (address ? `${address.substring(0, 6)}....${address.slice(-5)}` : '');
 
     return (
       <div>
@@ -39,15 +44,12 @@ function App() {
     );
   }
 
-  // const optInWallets = ['Continue with Google'];
+  const optInWallets = ['Continue with Google', 'Petra'];
 
   return (
     <>
       <div style={{ margin: 'auto', padding: '1rem', backgroundColor: '#cccc', textAlign: 'center', height: 'calc(100vh - 2rem)' }}>
-        <AptosWalletAdapterProvider
-          autoConnect={true}
-          // optInWallets={optInWallets}
-        >
+        <AptosWalletAdapterProvider autoConnect={true} optInWallets={optInWallets}>
           <WalletContent />
         </AptosWalletAdapterProvider>
       </div>
